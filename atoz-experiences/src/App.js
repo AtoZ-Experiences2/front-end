@@ -12,8 +12,8 @@ import NavBar from './ChildrenComponents/NavBar';
 function App() {
   return (
     <div className="App">
+      <Route exact path='/' component={MainPage} />
       <Route path='/' component={NavBar} />
-      <Route exact path='/home' component={MainPage} />
       <Route path='/user/:userid' component={ProfilePage} />
       <Route path='/register' component={Register} />
       <Route path='/signin' component={SignIn} />
