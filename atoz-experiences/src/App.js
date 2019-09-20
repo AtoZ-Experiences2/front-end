@@ -1,15 +1,24 @@
 import React from 'react';
+import { Route } from 'react-router-dom';
 import './App.css';
 import AddExperience from './MainPages/AddExperience';
 import ExperiencePage from './MainPages/ExperiencePage';
 import MainPage from './MainPages/MainPage';
 import ProfilePage from './MainPages/ProfilePage';
-import UserLogonPage from './MainPages/UserLogonPage';
+import Register from './ChildrenComponents/UserLogoComponents/Register';
+import SignIn from './ChildrenComponents/UserLogoComponents/SignIn';
+import NavBar from './ChildrenComponents/NavBar';
 
 function App() {
   return (
     <div className="App">
-      <MainPage />
+      <Route path='/' component={NavBar} />
+      <Route exact path='/home' component={MainPage} />
+      <Route path='/user/:userid' component={ProfilePage} />
+      <Route path='/register' component={Register} />
+      <Route path='/signin' component={SignIn} />
+      <Route path='/addexperience' component={AddExperience} />
+      <Route path='/experience/:experienceid' component={ExperiencePage} /> 
     </div>
   );
 }
