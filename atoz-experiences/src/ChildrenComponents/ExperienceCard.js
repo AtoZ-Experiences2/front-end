@@ -10,7 +10,7 @@ export default function ExperienceCard (props) {
         Category: {topic}
         City: {city}
         Date: {start_date}
-        Cost (fees and taxes not included): {facet_values}
+        Cost: (fees and taxes not included) {facet_values}
       </ExperienceCard> 
     </div>
   );
