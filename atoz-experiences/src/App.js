@@ -4,12 +4,12 @@ import AddExperience from './MainPages/AddExperience';
 import ExperiencePage from './MainPages/ExperiencePage';
 import MainPage from './MainPages/MainPage';
 import ProfilePage from './MainPages/ProfilePage';
-import SignUpPage from './MainPages/SignUpPage';
+import UserLogonPage from './MainPages/UserLogonPage';
 
 function App() {
   return (
     <div className="App">
-      <h1>Hello</h1>
+      <MainPage />
     </div>
   );
 }
