@@ -10,7 +10,8 @@ function App() {
   return (
     <div className="App">
       <MainPage />
-      <AllExperiencesCard />
+      <AddExperience />
+      <ExperiencePage /> 
       <ProfilePage />
       <SignUpPage />
     </div>

@@ -1,6 +1,5 @@
 import React from 'react';
 import TopExp from '../ChildrenComponents/TopExp';
-import AllExperienceCard from '../ChildrenComponents/AllExperiencesCard'
 import AllExperiencesCard from '../ChildrenComponents/AllExperiencesCard';
 
 export default function MainPage () {
@@ -9,7 +8,7 @@ export default function MainPage () {
   useEffect(() => {
     const getActivityList = () => {
       axios
-      .get("")
+      .get("http://api.amp.active.com/v2/search/?current_page=1&per_page=10&sort=distance&exclude_children=true&api_key=wwvg2896yvkbhab42kg3e4sh")
       .then(resp => {
         setActivities(resp.data.results);
         console.log(resp.data);
@@ -25,7 +24,12 @@ export default function MainPage () {
   return (
     <div>
       {activities.map(activity => (
-        <AllExperiencesCard key={activity.category} activity={activity} city={activity.city} topic={activity.topic} start_date={activity.start_date} facet_values={activity.facet_values} />
+        <AllExperiencesCard key={activity.category} 
+        activity={activity} 
+        city={activity.city} 
+        topic={activity.topic} 
+        start_date={activity.start_date} 
+        facet_values={activity.facet_values} />
       ))}
     </div>
   )
