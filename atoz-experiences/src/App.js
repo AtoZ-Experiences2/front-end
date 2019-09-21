@@ -7,13 +7,11 @@ import MainPage from './MainPages/MainPage';
 import ProfilePage from './MainPages/ProfilePage';
 import Register from './ChildrenComponents/UserLogoComponents/Register';
 import SignIn from './ChildrenComponents/UserLogoComponents/SignIn';
-import NavBar from './ChildrenComponents/NavBar';
 
 function App() {
   return (
     <div className="App">
       <Route exact path='/' component={MainPage} />
-      <Route path='/' component={NavBar} />
       <Route path='/user/:userid' component={ProfilePage} />
       <Route path='/register' component={Register} />
       <Route path='/signin' component={SignIn} />
