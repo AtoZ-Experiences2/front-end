@@ -27,7 +27,7 @@ export default function MainPage () {
       <h2>A to Z Experiences</h2>
       
       {activities.map(activity => (
-        <AllExperiencesCard key={activity.category} 
+        <AllExperienceCard key={activity.category} 
         activity={activity} 
         city={activity.city} 
         topic={activity.topic} 
