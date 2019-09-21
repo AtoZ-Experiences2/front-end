@@ -1,5 +1,5 @@
 import React from 'react';
-import AddEventForm from '../ChildrenComponents/AddEventForm'
+import AddEventForm from '../ChildrenComponents/AddExpPageComponents/AddEventForm'
 
 export default function AddExperience () {
 

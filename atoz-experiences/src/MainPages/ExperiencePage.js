@@ -1,6 +1,11 @@
+<<<<<<< HEAD
+import React from 'react';
+import ExperienceCard from '../ChildrenComponents/ExpPageComponents/ExperienceCard';
+=======
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import ExperienceCard from '../ChildrenComponents/ExperienceCard';
+>>>>>>> master
 
 export default function ExperiencePage () {
   const [experience, setExperience] = useState([])

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import TopExp from '../ChildrenComponents/TopExp';
-import AllExperiencesCard from '../ChildrenComponents/AllExperiencesCard';
+import TopExp from '../ChildrenComponents/MainPageComponents/TopExp';
+import AllExperienceCard from '../ChildrenComponents/MainPageComponents/AllExperiencesCard';
 
 export default function MainPage () {
   const [activities, setActivities] = useState ([])
@@ -24,6 +24,8 @@ export default function MainPage () {
 
   return (
     <div>
+      <h2>A to Z Experiences</h2>
+      
       {activities.map(activity => (
         <AllExperiencesCard key={activity.category} 
         activity={activity} 
