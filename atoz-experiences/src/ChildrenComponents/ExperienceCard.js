@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default function ExperienceCard (props) {
-  const{ activity, city, topic, start_date, facet_values }
+  const{ activity, city, topic, start_date, facet_values }=props.activity
 
   return (
     <div>
