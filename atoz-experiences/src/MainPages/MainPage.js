@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import TopExp from '../ChildrenComponents/MainPageComponents/TopExp';
+import NavBar from '../ChildrenComponents/NavBar';
 import AllExperienceCard from '../ChildrenComponents/MainPageComponents/AllExperiencesCard';
 
 export default function MainPage () {
@@ -24,8 +25,7 @@ export default function MainPage () {
 
   return (
     <div>
-      <h2>A to Z Experiences</h2>
-      
+      <NavBar />
       {activities.map(activity => (
         <AllExperienceCard key={activity.category} 
         activity={activity} 

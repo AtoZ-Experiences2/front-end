@@ -1,11 +1,14 @@
 import React from 'react';
 import MyEvents from '../ChildrenComponents/ProfilePageComponents/MyEvents';
+import LoggedNavBar from '../ChildrenComponents/LoggedNavBar';
+import ProfileHeader from '../ChildrenComponents/ProfilePageComponents/ProfileHeader';
 
 export default function ProfilePage () {
 
   return(
-    <header className="ui centered">
-      <h2 className="ui center">Profile</h2>
-    </header>
+    <div>
+      <LoggedNavBar />
+      <ProfileHeader />
+    </div>
   );
 }

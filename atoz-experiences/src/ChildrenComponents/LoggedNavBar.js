@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Input, Menu } from 'semantic-ui-react'
 import { NavLink } from 'react-router-dom';
 
-export default function NavBar () {
+export default function LoggedNavBar () {
   
   const [activeItem, setActiveItem] = useState('home') 
 
@@ -34,17 +34,17 @@ export default function NavBar () {
             <Menu.Item>
               <Input icon='search' placeholder='Search...' />
             </Menu.Item>
-            <NavLink to='/signin'>
+            <NavLink to='/user/:userid'>
               <Menu.Item
-                name='Sign In'
-                active={activeItem === 'Sign In'}
+                name='My Profile'
+                active={activeItem === 'My Profile'}
                 onClick={handleItemClick}
               />
             </NavLink>
-            <NavLink to='/register'>
+            <NavLink to='/'>
               <Menu.Item
-                name='Register'
-                active={activeItem === 'Register'}
+                name='Logout'
+                active={activeItem === 'Logout'}
                 onClick={handleItemClick}
               />
             </NavLink> 

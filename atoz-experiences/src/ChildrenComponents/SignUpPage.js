@@ -3,10 +3,10 @@ import { withFormik, Form, Field } from 'formik';
 import * as Yup from 'yup'
 import axios from "axios";
 
-import UserForm from '../ChildrenComponents/UserForm';
+// import UserForm from '../ChildrenComponents/UserForm';
 
 
-function UserForm({ errors, touched, status }) {
+const SignUpPage = ({ errors, touched, status }) => {
 
   const [signUp, setSignUp] = useState ([])
 
@@ -17,18 +17,19 @@ function UserForm({ errors, touched, status }) {
   }, [status])
 
   return(
-    <div>
+    <div className='sign-up-form'>
      <Form>
-       <div>
-        {touched.username && errors.username && <p>{errors.username} </p>}
-        <Field type="text" name="name" placeholder="Name" />
-       </div>
-       <div>
-          {touched.email && errors.email && <p>{errors.email}</p>}
-          <Field type="email" name="email" placeholder="Email" />
-        </div>
-        <button>Register</button>
-     </Form>
+      {touched.name && errors.name && <p>{errors.name} </p>}
+      <Field type="text" name="name" placeholder="Name" />
+      
+      {touched.email && errors.email && <p>{errors.email}</p>}
+      <Field type="email" name="email" placeholder="Email" />
+
+      {touched.password && errors.password && <p>{errors.password}</p>}
+      <Field type="password" name="password" placeholder="Password" />
+      
+      <button>Register</button>
+      
       {signUp.map((items, index) => {
         return (
            <div key={index}>
@@ -37,15 +38,16 @@ function UserForm({ errors, touched, status }) {
            </div>
         )
       })}
+      </Form>
     </div>
   );
 }
 
-const FormikNewUser = withFormik({
-  mapPropsToValues({ name, email }) {
+export default withFormik({
+  mapPropsToValues: (values) => {
     return {
-      name: name || "",
-      email: email || ""
+      name: values.name || "",
+      email: values.email || ""
     };
   },
 
@@ -74,6 +76,4 @@ const FormikNewUser = withFormik({
         });
     }
   }
-})(UserForm);
-
-export default FormikNewUser;
+})(SignUpPage);
