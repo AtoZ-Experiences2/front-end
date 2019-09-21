@@ -5,7 +5,7 @@ export default function AllExperiencesCard (props) {
 
   return (
    <div> 
-    <Img src={image} alt={activity} />
+    <img src={image} alt={activity} />
     <AllExperiencesCard> 
       Experience You Want: {activity} 
       Category: {topic} 

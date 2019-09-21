@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import ExperienceCard from '../ChildrenComponents/ExperienceCard';
 
 export default function ExperiencePage () {
@@ -24,11 +25,11 @@ export default function ExperiencePage () {
     <div>
       {experience.map(exp => (
         <ExperienceCard key={exp.category} 
-        activity={activity}
-        city={activity.city}
-        topic={activity.topic}
-        start_date={activity.start_date}
-        facet_values={activity.facet_values} />
+        experience={exp}
+        city={exp.city}
+        topic={exp.topic}
+          start_date={exp.start_date}
+          facet_values={exp.facet_values} />
       ))}
     </div>
   )
