@@ -8,7 +8,7 @@ import axios from "axios";
 
 const SignUpPage = ({ errors, touched, status }) => {
 
-  const [signUp, setSignUp] = useState ([])
+  const [signUp, setSignUp] = useState ([{}])
 
   useEffect(() => {
     if (status) {
@@ -23,10 +23,10 @@ const SignUpPage = ({ errors, touched, status }) => {
       <Field type="text" name="name" placeholder="Name" />
       
       {touched.email && errors.email && <p>{errors.email}</p>}
-      <Field type="email" name="email" placeholder="Email" />
+      <Field type="email" name="email" placeholder="example@email.com" />
 
       {touched.password && errors.password && <p>{errors.password}</p>}
-      <Field type="password" name="password" placeholder="Password" />
+      <Field type="password" name="password" placeholder="We'll keep this secret!" />
       
       <button>Register</button>
       
@@ -47,7 +47,8 @@ export default withFormik({
   mapPropsToValues: (values) => {
     return {
       name: values.name || "",
-      email: values.email || ""
+      email: values.email || "",
+      password: values.password || "",
     };
   },
 
@@ -57,6 +58,7 @@ export default withFormik({
     email: Yup.string()
       .email("Email not valid")
       .required("Email required"),
+    password: Yup.string().required("Please enter a valid password!")
   }),
 
   handleSubmit(values, { resetForm, setErrors, setSubmitting, setStatus }) {
