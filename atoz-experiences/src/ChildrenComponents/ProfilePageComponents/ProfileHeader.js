@@ -1,24 +1,28 @@
-import React, { useState, useEffect} from 'react'
-import { Header, Image } from 'semantic-ui-react'
+import React, { useState, useEffect} from 'react';
+import { Jumbotron } from 'reactstrap';
+import axios from 'axios';
 
-function ProfileHeader  () {
-  const [user, setUser] = useState([{
-    name: 'placeholdername',
-    username: 'placeholderuser',
-    location: 'placeholderlocation',
-    email: 'placeholder@email.com',
-  }]);
+function ProfileHeader  (props) {
+  
+  const [userInfo, setUserInfo] = useState({})
+
+  useEffect((
+    axios.get('')
+      .then(res => {
+        setUserInfo(res.data)
+      })
+      .catch(err => {
+        console.error(err)
+      })
+  ), [])
 
   return (
-    user.map((e, index) => (
-      <div key={index}>
-        <Header as='h2'>
-          <Image circular src='https://react.semantic-ui.com/images/avatar/large/patrick.png' /> 
-          {e.name}
-        </Header>
-      </div>
-    ))
-  
+    <div className = 'profile-header'>
+      <Jumbotron>
+        <h1 className='display-3'>Welcome back, {userInfo.name}</h1>
+        <p className='lead'>What would you like to do today?</p>
+      </Jumbotron>
+    </div>
 )}
 
 export default ProfileHeader
