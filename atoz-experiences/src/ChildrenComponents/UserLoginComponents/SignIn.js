@@ -26,7 +26,7 @@ const SignInPage = ({ errors, touched, status }) => {
         {touched.password && errors.password && <p>{errors.password}</p>}
         <Field type="password" name="password" placeholder="password" />
 
-        <Button color="success" size="lg">Register</Button> {' '}
+        <Button color="success" size="lg">Sign In</Button> {' '}
 
         {signIn.map((items, index) => {
           return (
