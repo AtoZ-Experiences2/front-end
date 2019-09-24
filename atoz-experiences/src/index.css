@@ -12,13 +12,30 @@ code {
     monospace;
 }
 
-/* button {
-  background-color: darkblue;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  padding: 10px 15px;
-} */
-     /* &:hover: {
-       opacity: 0.7;
+.App {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+}
+
+h2 {
+  font-size: 4.8rem;
+  display: flex;
+  justify-content: center;
+}
+
+a.item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  font-size: 1.6rem;
+  color: black;
+}
+
+/* a {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+
 } */
