@@ -2,7 +2,7 @@ import React, { useState, useEffect} from 'react';
 import { Jumbotron } from 'reactstrap';
 import axios from 'axios';
 
-function ProfileHeader  (props) {
+function ProfileHeader  () {
   
   const [userInfo, setUserInfo] = useState({})
 

@@ -8,9 +8,7 @@ export default function ProfilePage () {
   return(
     <div>
       <LoggedNavBar />
-      <ProfileHeader>
-        Name: {userInfo.name}
-        </ProfileHeader>/>
+      {/* <ProfileHeader>{userInfo.name}</ProfileHeader> */}
     </div>
   );
 }
