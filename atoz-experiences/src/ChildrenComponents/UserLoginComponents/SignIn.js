@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import { withFormik, Form, Field } from 'formik';
 import * as Yup from 'yup'
 import axios from "axios";
@@ -7,38 +7,35 @@ import { Button } from 'reactstrap';
 // import UserForm from '../ChildrenComponents/UserForm';
 
 
-const SignUpPage = ({ errors, touched, status }) => {
+const SignInPage = ({ errors, touched, status }) => {
 
-  const [signUp, setSignUp] = useState ([{}])
+  const [signIn, setSignIn] = useState([{}])
 
   useEffect(() => {
     if (status) {
-      setSignUp([ ...signUp, status ])
+      setSignIn([...signIn, status])
     }
   }, [status])
 
-  return(
+  return (
     <div className='sign-up-form'>
-     <Form>
-      {touched.name && errors.name && <p>{errors.name} </p>}
-      <Field type="text" name="name" placeholder="Name" />
-      
-      {touched.email && errors.email && <p>{errors.email}</p>}
-      <Field type="email" name="email" placeholder="example@email.com" />
+      <Form>
+         {touched.email && errors.email && <p>{errors.email}</p>}
+        <Field type="email" name="email" placeholder="example@email.com" />
 
-      {touched.password && errors.password && <p>{errors.password}</p>}
-      <Field type="password" name="password" placeholder="We'll keep this secret!" />
-      
-      <Button color="primary" size="lg">Register</Button> {' '}
-      
-      {signUp.map((items, index) => {
-        return (
-           <div key={index}>
-           <h2>{items.name}</h2>
-           <p>{items.email}</p>
-           </div>
-        )
-      })}
+        {touched.password && errors.password && <p>{errors.password}</p>}
+        <Field type="password" name="password" placeholder="password" />
+
+        <Button color="success" size="lg">Sign In</Button> {' '}
+
+        {signIn.map((items, index) => {
+          return (
+            <div key={index}>
+              <h2>{items.email}</h2>
+              <p>{items.password}</p>
+            </div>
+          )
+        })}
       </Form>
     </div>
   );
@@ -47,16 +44,13 @@ const SignUpPage = ({ errors, touched, status }) => {
 export default withFormik({
   mapPropsToValues: (values) => {
     return {
-      name: values.name || "",
       email: values.email || "",
-      password: values.password || "",
+      password: values.password || ""
     };
   },
 
   validationSchema: Yup.object().shape({
-    name: Yup.string()
-      .required("Name Required"),
-    email: Yup.string()
+     email: Yup.string()
       .email("Email not valid")
       .required("Email required"),
     password: Yup.string().required("Please enter a valid password!")
@@ -79,4 +73,4 @@ export default withFormik({
         });
     }
   }
-})(SignUpPage);
+})(SignInPage);
