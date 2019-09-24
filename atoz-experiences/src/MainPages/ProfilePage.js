@@ -8,7 +8,7 @@ export default function ProfilePage (props) {
   return(
     <div>
       <LoggedNavBar />
-      <ProfileHeader>{props.userInfo.name}</ProfileHeader>
+      <ProfileHeader />
     </div>
   );
 }
