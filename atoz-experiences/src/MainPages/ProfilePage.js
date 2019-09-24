@@ -3,12 +3,12 @@ import MyEvents from '../ChildrenComponents/ProfilePageComponents/MyEvents';
 import LoggedNavBar from '../ChildrenComponents/LoggedNavBar';
 import ProfileHeader from '../ChildrenComponents/ProfilePageComponents/ProfileHeader';
 
-export default function ProfilePage () {
+export default function ProfilePage (props) {
 
   return(
     <div>
       <LoggedNavBar />
-      <ProfileHeader />
+      <ProfileHeader>{props.userInfo.name}</ProfileHeader>
     </div>
   );
 }

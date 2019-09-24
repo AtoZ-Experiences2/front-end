@@ -28,8 +28,8 @@ export default function ExperiencePage () {
         experience={exp}
         city={exp.city}
         topic={exp.topic}
-          start_date={exp.start_date}
-          facet_values={exp.facet_values} />
+        start_date={exp.start_date}
+        facet_values={exp.facet_values} />
       ))}
     </div>
   )
