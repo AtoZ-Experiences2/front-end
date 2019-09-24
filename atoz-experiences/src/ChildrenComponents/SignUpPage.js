@@ -29,7 +29,7 @@ const SignUpPage = ({ errors, touched, status }) => {
       {touched.password && errors.password && <p>{errors.password}</p>}
       <Field type="password" name="password" placeholder="We'll keep this secret!" />
       
-      <Button color="primary" size="lg">Register</Button> {' '}
+      <Button color="success" size="lg">Register</Button> {' '}
       
       {signUp.map((items, index) => {
         return (
