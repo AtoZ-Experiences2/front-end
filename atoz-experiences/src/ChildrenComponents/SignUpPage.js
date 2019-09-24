@@ -2,7 +2,6 @@ import React, {useState, useEffect} from 'react';
 import { withFormik, Form, Field } from 'formik';
 import * as Yup from 'yup'
 import axios from "axios";
-import { Button } from 'reactstrap';
 
 // import UserForm from '../ChildrenComponents/UserForm';
 
@@ -29,7 +28,7 @@ const SignUpPage = ({ errors, touched, status }) => {
       {touched.password && errors.password && <p>{errors.password}</p>}
       <Field type="password" name="password" placeholder="We'll keep this secret!" />
       
-      <Button color="primary" size="lg">Register</Button> {' '}
+      <button>Register</button>
       
       {signUp.map((items, index) => {
         return (

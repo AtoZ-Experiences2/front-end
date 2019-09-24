@@ -7,9 +7,9 @@ function ProfileHeader  (props) {
   const [userInfo, setUserInfo] = useState({})
 
   useEffect((
-    axios.get('')
+    axios.get('https://a-to-z-experience.herokuapp.com/')
       .then(res => {
-        setUserInfo(res.data)
+        console.log(res)
       })
       .catch(err => {
         console.error(err)
@@ -21,6 +21,7 @@ function ProfileHeader  (props) {
       <Jumbotron>
         <h1 className='display-3'>Welcome back, {userInfo.name}</h1>
         <p className='lead'>What would you like to do today?</p>
+        
       </Jumbotron>
     </div>
 )}
