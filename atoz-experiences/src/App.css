@@ -15,7 +15,7 @@ body {
         sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
     font-size: 14px;
     line-height: 1.5;
-    color: #24292e;
+    color: #300553;
     background: #e69449;
 }
 
@@ -51,7 +51,7 @@ textarea {
     width: 100%;
     display: block;
     border-radius: 4px;
-    border: 1px solid rgb(179, 177, 174);
+    border: 1.5px solid rgb(67, 6, 107);
 }
 
 input:focus {
