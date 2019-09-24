@@ -5,8 +5,8 @@ import AddExperience from './MainPages/AddExperience';
 import ExperiencePage from './MainPages/ExperiencePage';
 import MainPage from './MainPages/MainPage';
 import ProfilePage from './MainPages/ProfilePage';
-import Register from './ChildrenComponents/UserLogoComponents/Register';
-import SignIn from './ChildrenComponents/UserLogoComponents/SignIn';
+import Register from './ChildrenComponents/UserLoginComponents/Register';
+import SignIn from './ChildrenComponents/UserLoginComponents/SignIn';
 
 function App() {
   return (
