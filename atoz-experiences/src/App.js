@@ -5,8 +5,7 @@ import AddExperience from './MainPages/AddExperience';
 import ExperiencePage from './MainPages/ExperiencePage';
 import MainPage from './MainPages/MainPage';
 import ProfilePage from './MainPages/ProfilePage';
-import Activities from './ChildrenComponents/MainPageComponents/Activities';
-import Locations from './ChildrenComponents/MainPageComponents/Locations';
+import AllExperiences from './ChildrenComponents/MainPageComponents/AllExperiences';
 import Register from './ChildrenComponents/UserLoginComponents/Register';
 import SignIn from './ChildrenComponents/UserLoginComponents/SignIn';
 
@@ -17,8 +16,7 @@ function App() {
       <Route path='/user/:userid' component={ProfilePage} />
       <Route path='/register' component={Register} />
       <Route path='/signin' component={SignIn} />
-      <Route path='/activities' component={Activities} />
-      <Route path='/locations' component={Locations} />
+      <Route path='/allexperences' component={AllExperiences} />
       <Route path='/addexperience' component={AddExperience} />
       <Route path='/experience/:experienceid' component={ExperiencePage} /> 
     </div>

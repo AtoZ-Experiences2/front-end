@@ -20,19 +20,19 @@ export default function NavBar () {
             onClick={handleItemClick}
           />
           </NavLink>
-          <NavLink to='/activities'>
+          <NavLink to='/allexperiences'>
             <Menu.Item
-              name='Activities'
-              active={activeItem === 'Activities'}
+              name='All Experiences'
+              active={activeItem === 'All Experiences'}
               onClick={handleItemClick}
-            />
+            /> 
           </NavLink>
-          <NavLink to='/locations'>
-            <Menu.Item
-              name='Locations'
-              active={activeItem === 'Locations'}
-              onClick={handleItemClick}
-            />
+            <NavLink to='/addexperience'>
+              <Menu.Item
+                name='Add Experience'
+                active={activeItem === 'Add Experience'}
+                onClick={handleItemClick}
+              />         
           </NavLink>
           <Menu.Menu position='right'>
             <Menu.Item>
