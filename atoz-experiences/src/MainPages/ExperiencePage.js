@@ -1,6 +1,7 @@
 import React, { useState, useEffect} from 'react';
 import axios from 'axios';
 import ExperienceCard from '../ChildrenComponents/ExpPageComponents/ExperienceCard';
+import { Route, Switch } from 'react-router-dom';
 
 export default function ExperiencePage () {
   const [experience, setExperience] = useState([])
@@ -21,6 +22,11 @@ export default function ExperiencePage () {
       getExperience();
   }, []);
 
+  function deleteExperience(props)  {
+    const updatedExperience = experience.filter(experiences => !experiences.completed);
+    setExperience(updatedExperience);
+  }
+
   return(
     <div>
       {experience.map(exp => (
@@ -30,7 +36,14 @@ export default function ExperiencePage () {
         topic={exp.topic}
         start_date={exp.start_date}
         facet_values={exp.facet_values} />
-      ))}
+
+      <Switch>
+        <Route exact path='/' render={props => <ExperiencePage {...props} experience={experience} delete={deleteExperience} />} />
+      </Switch>
+      // <button onClick={props.delete}>
+      //   Delete
+      // </button>
     </div>
+  ))}
   )
 }
