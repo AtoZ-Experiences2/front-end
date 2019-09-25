@@ -1,7 +1,7 @@
 import React from 'react';
 import { Field } from 'formik'
 
-export default function TopExp ( { touched, errors }) {
+export default function TopExp ({ touched, errors }) {
 
   return (
     <div>
