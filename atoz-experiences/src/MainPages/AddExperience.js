@@ -6,8 +6,7 @@ export default function AddExperience({ touched, errors }) {
   const [addExperience, setAddExperience] = useState([])
 
 
-  useEffect (() => {
-    const getAddedExperience = () => {
+  useEffect(() => {
       axios
         .post("https://a-to-z-experience.herokuapp.com/api/experiences")
         .then(resp => {
@@ -17,17 +16,15 @@ export default function AddExperience({ touched, errors }) {
         .catch(err => {
           console.log(err);
         });
-    }
-    getAddedExperience();
     }, [])
 
-  // return(
-  //   <Form>
-  //     <h4>What experience would you like to add?</h4>
-  //     {touched.category && errors.category && <p>{errors.category}</p>}
-  //     <Field type="text" name="name" placeholder="New Experience" />
-  //   </Form>
-  // )
+  return(
+    <Form>
+      <h4>What experience would you like to add?</h4>
+      {touched.category && errors.category && <p>{errors.category}</p>}
+      <Field type="text" name="name" placeholder="New Experience" />
+    </Form>
+  )
 }
  withFormik({
   mapPropsToValues: (values) => {
