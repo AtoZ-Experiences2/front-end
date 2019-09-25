@@ -3,7 +3,7 @@ import axios from 'axios';
 import ExperienceCard from '../ChildrenComponents/ExpPageComponents/ExperienceCard';
 import { Route, Switch } from 'react-router-dom';
 
-export default function ExperiencePage () {
+export default function ExperiencePage (props) {
   const [experience, setExperience] = useState([])
 
     useEffect (() => {
@@ -22,7 +22,7 @@ export default function ExperiencePage () {
       getExperience();
   }, []);
 
-  function deleteExperience(props)  {
+  function deleteExperience()  {
     const updatedExperience = experience.filter(experiences => !experiences.completed);
     setExperience(updatedExperience);
   }
@@ -36,14 +36,11 @@ export default function ExperiencePage () {
         topic={exp.topic}
         start_date={exp.start_date}
         facet_values={exp.facet_values} />
-
-      <Switch>
+      ))}
+        <Switch>
         <Route exact path='/' render={props => <ExperiencePage {...props} experience={experience} delete={deleteExperience} />} />
-      </Switch>
-      // <button onClick={props.delete}>
-      //   Delete
-      // </button>
-    </div>
-  ))}
+        </Switch>
+        <button onClick={props.delete}>Delete</button>
+  </div>
   )
 }
