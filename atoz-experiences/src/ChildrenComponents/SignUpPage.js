@@ -30,7 +30,7 @@ const SignUpPage = ({ errors, touched, status }) => {
       <Field type="email" name="email" placeholder="example@email.com" />
 
       {touched.password && errors.password && <p>{errors.password}</p>}
-      <Field type="password" name="password" placeholder="We'll keep this secret!" />
+      <Field type="password" name="password" placeholder="password" />
       
       <Button color="success" size="lg">Register</Button> {' '}
       
