@@ -16,20 +16,24 @@ export default function NavBar () {
           <NavLink to='/'>
             <Menu.Item
             name='Home'
-            active={activeItem === 'home'}
+            active={activeItem === 'Home'}
             onClick={handleItemClick}
           />
           </NavLink>
-          <Menu.Item
-            name='Activities'
-            active={activeItem === 'messages'}
-            onClick={handleItemClick}
-          />
-          <Menu.Item
-            name='Location'
-            active={activeItem === 'friends'}
-            onClick={handleItemClick}
-          />
+          <NavLink to='/activities'>
+            <Menu.Item
+              name='Activities'
+              active={activeItem === 'Activities'}
+              onClick={handleItemClick}
+            />
+          </NavLink>
+          <NavLink to='/locations'>
+            <Menu.Item
+              name='Locations'
+              active={activeItem === 'Locations'}
+              onClick={handleItemClick}
+            />
+          </NavLink>
           <Menu.Menu position='right'>
             <Menu.Item>
               <Input icon='search' placeholder='Search...' />

@@ -21,7 +21,10 @@ const SignUpPage = ({ errors, touched, status }) => {
     <div className='sign-up-form'>
      <Form>
       {touched.name && errors.name && <p>{errors.name} </p>}
-      <Field type="text" name="name" placeholder="Name" />
+      <Field type="text" name="name" placeholder="Your Name" />
+
+      {touched.username && errors.username && <p>{errors.username} </p>}
+      <Field type="text" name="username" placeholder="uniqueusername123:)" />
       
       {touched.email && errors.email && <p>{errors.email}</p>}
       <Field type="email" name="email" placeholder="example@email.com" />
@@ -31,14 +34,6 @@ const SignUpPage = ({ errors, touched, status }) => {
       
       <Button color="success" size="lg">Register</Button> {' '}
       
-      {signUp.map((items, index) => {
-        return (
-           <div key={index}>
-           <h2>{items.name}</h2>
-           <p>{items.email}</p>
-           </div>
-        )
-      })}
       </Form>
     </div>
   );
@@ -47,29 +42,31 @@ const SignUpPage = ({ errors, touched, status }) => {
 export default withFormik({
   mapPropsToValues: (values) => {
     return {
+      username: values.username || "",
       name: values.name || "",
       email: values.email || "",
-      password: values.password || "",
+      password: values.password || ""
     };
   },
 
   validationSchema: Yup.object().shape({
     name: Yup.string()
-      .required("Name Required"),
+      .required("We do need your name, even if it looks funny"),
     email: Yup.string()
-      .email("Email not valid")
-      .required("Email required"),
-    password: Yup.string().required("Please enter a valid password!")
+      .email("Please enter a valid email address!")
+      .required("Please enter a valid email address!"),
+    password: Yup.string().required("Please enter a valid password!"),
+    username: Yup.string()
+      .required("Please enter a unique username!")
   }),
 
-  handleSubmit(values, { resetForm, setErrors, setSubmitting, setStatus }) {
+  handleSubmit(values, { resetForm, setErrors, setSubmitting, setStatus }, props) {
     if (values.email === "") {
       setErrors({ email: "That email is already taken" });
     } else {
       axios
-        .post("https://reqres.in/api/users", values)
+        .post("https://a-to-z-experience.herokuapp.com/api/users/register", values)
         .then(response => {
-          setStatus(response.data);
           resetForm();
           setSubmitting(false);
         })
