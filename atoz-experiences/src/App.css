@@ -11,11 +11,11 @@ body {
 }
 
 body {
-    font-family: 'Vibes' 'Sans-Serif';
+    font-family: 'Vibes', 'San-Serif';
     font-size: 14px;
     line-height: 1.5;
     color: #300553;
-    background: #e74c3c;
+    background: #e69449;
 }
 
 .app {
@@ -26,10 +26,16 @@ form {
     width: 460px;
     margin: 100px auto 50px;
     padding: 32px;
-    background-color: 5dbcd;
+    background-color: rgb(138, 65, 223);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
     text-align: left;
     border-radius: 5px;
+}
+
+p {
+    color: black;
+    font-size: 1.2rem;
+    margin-top: 30px;
 }
 .error {
     margin: 0;
@@ -43,9 +49,9 @@ form {
 
 input,
 textarea {
-    margin-top: 32px;
-    margin-bottom: 12px;
-    padding: 0.5rem;
+    margin-top: 5px;
+    margin-bottom: 35px;
+    padding: 1.0rem;
     font-size: 16px;
     width: 100%;
     display: block;
