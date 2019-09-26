@@ -38,10 +38,16 @@ export default function ExperiencePage (props) {
         facet_values={exp.facet_values} />
       ))}
         <Switch>
-        <Route exact path='/' render={props => <ExperiencePage {...props} experience={experience} delete={deleteExperience} />} />
+      <Route path='/editexperience/:id' render={props => <ExperiencePage {...props} setExperience={setExperience} experience={experience} edit={true} />} />
+      <button>
+        <NavLink to={`/editexperience/${experience.id}`}>
+          Edit
+        </NavLink>
+      </button>
+        <Route exact path='/' render={props => <ExperiencePage {...props} setExperience={setExperience} experience={experience} delete={deleteExperience} />} />
         </Switch>
         <button onClick={props.delete}>Delete</button>
   </div>
   )
-  
+
 }
