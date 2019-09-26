@@ -67,6 +67,9 @@ export default withFormik({
       axios
         .post("https://a-to-z-experience.herokuapp.com/api/users/register", values)
         .then(response => {
+          localStorage.setItem('token', response.data.token);
+          alert(`Congrats, ${response.data.registeredUser.name}! 
+          You've successfully created an account. You are now signed in!`)
           resetForm();
           setSubmitting(false);
         })
