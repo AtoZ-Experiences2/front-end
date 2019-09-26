@@ -9,7 +9,7 @@ function ProfileHeader  (props) {
         Authorization: token
       }
     }
-   const [userInfo, setUserInfo] = useState({})
+  const [userInfo, setUserInfo] = useState({})
 
   const id = props.match.params.id
 
