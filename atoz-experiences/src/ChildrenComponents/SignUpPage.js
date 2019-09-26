@@ -70,6 +70,7 @@ export default withFormik({
           localStorage.setItem('token', response.data.token);
           alert(`Congrats, ${response.data.registeredUser.name}! 
           You've successfully created an account. You are now signed in!`)
+          window.location.reload();
           resetForm();
           setSubmitting(false);
         })

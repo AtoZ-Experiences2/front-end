@@ -4,7 +4,8 @@ import React, {
   useEffect
 } from 'react';
 import axios from 'axios';
-import AllExperiencesCard from './AllExperiencesCard'
+import AllExperiencesCard from './AllExperiencesCard';
+import NavBar from '../NavBar';
 
 //map the data/activities and create individual cards for each.
 export default function AllExperiences(props) {
@@ -26,7 +27,6 @@ export default function AllExperiences(props) {
   const handleDelete = id => {
   // axios call to delete
     console.log(`DELETE experience with id of ${id}?`)
-    axios
   }
 
   const handleEdit = id => {
@@ -39,20 +39,23 @@ export default function AllExperiences(props) {
   const filterBYCategory = () => {};
 
   return (
-    <div className="container row mb-5">
-      {experiences.map((activity, index) => (
-        <AllExperiencesCard 
-          id={activity.id}
-          event_name={activity.event_name}
-          category={activity.category}
-          date_time={activity.date_time}
-          location={activity.location}
-          cost={activity.cost}
-          handleDelete={handleDelete}
-          handleEdit={handleEdit}
-          filterByPrice={handlePrice}
-        />
-      ))}
+    <div>
+      <NavBar />
+      <div className="container row mb-5">
+        {experiences.map((activity, index) => (
+          <AllExperiencesCard 
+            id={activity.id}
+            event_name={activity.event_name}
+            category={activity.category}
+            date_time={activity.date_time}
+            location={activity.location}
+            cost={activity.cost}
+            handleDelete={handleDelete}
+            handleEdit={handleEdit}
+            // filterByPrice={handlePrice}
+          />
+        ))}
+      </div>
     </div>
   )
 }
