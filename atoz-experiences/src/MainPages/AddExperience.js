@@ -71,6 +71,7 @@ export default withFormik({
        .then(res => {
          //console.log(res); // Data was created successfully and logs to console
          alert(res.data.message);
+         window.location.reload();
        })
        .catch(err => {
          console.log(err); // There was an error creating the data and logs to console
