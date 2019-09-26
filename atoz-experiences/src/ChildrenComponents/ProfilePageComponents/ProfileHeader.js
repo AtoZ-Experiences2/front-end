@@ -26,7 +26,7 @@ function ProfileHeader  (props) {
   return (
     <div className = 'profile-header'>
       <Jumbotron>
-        <h1 className='display-3'>Welcome back, {userInfo.name}</h1>
+        <h1 className='display-3'>Welcome back, {userInfo.name}!</h1>
         <p className='lead'>What would you like to do today?</p>
 
       </Jumbotron>
