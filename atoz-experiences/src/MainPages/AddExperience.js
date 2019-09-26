@@ -26,17 +26,5 @@ export default function AddExperience({ touched, errors }) {
     </Form>
   )
 }
- withFormik({
-  mapPropsToValues: (values) => {
-    return {
-      event_name: values.event_name || '',
-      location: values.location || '',
-      date_time: values.date_time || '',
-      cost: values.cost || '',
-      category: values.category || ''
-    }
-  }
-})
-
 
 // Create delete and create components here.
