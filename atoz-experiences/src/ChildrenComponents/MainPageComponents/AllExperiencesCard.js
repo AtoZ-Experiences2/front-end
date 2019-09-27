@@ -70,7 +70,7 @@ export default function AllExperiencesCard(props) {
 
 
             <button
-              className="btn btn-outline-success mt-2"
+              className="btn btn-outline-info mt-2"
               type="button"
               onClick={() => props.handleEdit(props.id, experience)}
             >
