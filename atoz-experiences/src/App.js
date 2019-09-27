@@ -2,7 +2,7 @@ import React from 'react';
 import { Route } from 'react-router-dom';
 import './App.css';
 import AddExperienceForm from './MainPages/AddExperience';
-import ExperiencePage from './MainPages/ExperiencePage';
+//import ExperiencePage from './MainPages/ExperiencePage';
 import MainPage from './MainPages/MainPage';
 import ProfilePage from './MainPages/ProfilePage';
 import AllExperiences from './ChildrenComponents/MainPageComponents/AllExperiences';
@@ -18,7 +18,7 @@ function App() {
       <Route path='/signin' component={SignIn} />
       <Route path='/allexperences' component={AllExperiences} />
       <Route path='/addexperience' component={AddExperienceForm} />
-      <Route path='/experience/:experienceid' component={ExperiencePage} /> 
+      {/* <Route path='/experience/:experienceid' component={ExperiencePage} />  */}
     </div>
   );
 }
