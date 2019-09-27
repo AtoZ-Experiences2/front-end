@@ -26,7 +26,6 @@ export default function AllExperiences(props) {
   const handleDelete = id => {
   // axios call to delete
     console.log(`DELETE experience with id of ${id}?`)
-    axios
   }
 
   const handleEdit = id => {
@@ -69,8 +68,9 @@ export default function AllExperiences(props) {
           cost={activity.cost}
           handleDelete={handleDelete}
           handleEdit={handleEdit}
-          filterByPrice={handlePrice}
-          filterExperiences={handleCategory}
+          filterByPrice={activity.cost}
+          filterExperiences={activity.category}
+          filterByLocation={activity.location}
         />
       ))}
     </div>
