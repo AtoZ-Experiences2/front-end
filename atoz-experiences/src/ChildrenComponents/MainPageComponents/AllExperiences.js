@@ -34,9 +34,28 @@ export default function AllExperiences(props) {
     console.log(`UPDATE experience with id of ${id}?`)
   }
 
-  const filterByPrice = () => {};
+  const filterByPrice = prices.filter((cost) => {
+    return cost.experience < 50;
+})
+  filterByPrice
 
-  const filterBYCategory = () => {};
+
+  const filterExperiences = experiences.filter((experience) => {
+    return experience.activity === "Outdoors";
+  })
+  filterExperiences
+
+
+  const filterByLocation = cities.filter((city) => {
+    return cities.location === "Newport Beach";
+  })
+  filterByLocation
+
+  const filterByDate = dates.filter((date) => {
+    return dates.date_time === "1pm";
+  })
+  filterByDate
+
 
   return (
     <div className="container row mb-5">
@@ -51,6 +70,7 @@ export default function AllExperiences(props) {
           handleDelete={handleDelete}
           handleEdit={handleEdit}
           filterByPrice={handlePrice}
+          filterExperiences={handleCategory}
         />
       ))}
     </div>
