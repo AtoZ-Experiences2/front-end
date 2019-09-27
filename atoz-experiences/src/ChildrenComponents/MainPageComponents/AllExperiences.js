@@ -26,7 +26,6 @@ export default function AllExperiences(props) {
   const handleDelete = id => {
   // axios call to delete
     console.log(`DELETE experience with id of ${id}?`)
-    axios
   }
 
   const handleEdit = id => {
@@ -34,9 +33,9 @@ export default function AllExperiences(props) {
     console.log(`UPDATE experience with id of ${id}?`)
   }
 
-  const filterByPrice = () => {};
+  // const handleFilterByPrice = () => {};
 
-  const filterBYCategory = () => {};
+  // const handleFilterByCategory = () => {};
 
   return (
     <div className="container row mb-5">
@@ -49,8 +48,8 @@ export default function AllExperiences(props) {
           location={activity.location}
           cost={activity.cost}
           handleDelete={handleDelete}
-          handleEdit={handleEdit}
-          filterByPrice={handlePrice}
+          //handleFilterByPrice={handleFilterByPrice}
+          //handleFilterByCategory={handleFilterByCategory}
         />
       ))}
     </div>
