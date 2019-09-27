@@ -48,6 +48,7 @@ export default function AllExperiences(props) {
           location={activity.location}
           cost={activity.cost}
           handleDelete={handleDelete}
+          handleEdit={handleEdit}
           //handleFilterByPrice={handleFilterByPrice}
           //handleFilterByCategory={handleFilterByCategory}
         />
