@@ -47,12 +47,12 @@ export default function AllExperiences(props) {
 
 
   const filterByLocation = cities.filter((city) => {
-    return cities.location === "Newport Beach";
+    return city.location === "Newport Beach";
   })
   filterByLocation
 
   const filterByDate = dates.filter((date) => {
-    return dates.date_time === "1pm";
+    return date.date_time === "1pm";
   })
   filterByDate
 
