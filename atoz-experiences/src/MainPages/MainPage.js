@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React from 'react';
+
 import TopExp from '../ChildrenComponents/MainPageComponents/TopExp';
 import NavBar from '../ChildrenComponents/NavBar';
 import AllExperiences from '../ChildrenComponents/MainPageComponents/AllExperiences';
@@ -11,6 +11,6 @@ export default function MainPage () {
     <div>
       <NavBar />
       <AllExperiences />
-    </div>
+     </div>
   )
 }

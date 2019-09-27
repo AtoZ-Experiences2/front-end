@@ -1,15 +1,27 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useState } from 'react';
 
+
+// This is the code for each experience card.
+// Since we have access to all the information about the experience, including the id, we can easily edit and delete each card here
+// by making calls to our API using the props we received from AllExperiences.js
+
+// Assigning set experiences to props using useState instead of an empty string. We want to edit what is already rendered instead of adding a new experience.
 
 export default function AllExperiencesCard(props) {
-
-    // This is the code for each experience card.
-    // Since we have access to all the information about the experience, including the id, we can easily edit and delete each card here
-    // by making calls to our API using the props we received from AllExperiences.js
-
-
+  const [experience, setExperience] = useState({
+      event_name: props.event_name,
+      category: props.category,
+      date_time: props.date_time,
+      location: props.location,
+      cost: props.cost
+  })
     console.log('props', props)
+
+      const handleChange = event => {
+        setExperience({ ...experience, [event.target.name]: event.target.value });
+      };
+      console.log('experience', experience)
+
     return (
       <div className="card mt-3 mx-3 bg-light">
 
@@ -17,38 +29,42 @@ export default function AllExperiencesCard(props) {
             <input
               type="text"
               className="card-title"
-              name="name"
-              value={props.event_name}
-              onChange={(e) => this.handleChange(e)}
+              name="event_name"
+              value={experience.event_name}
+              onChange={(e) => handleChange(e)}
             />
 
             <ul className="list-group">
               <input
                 type="text"
-                name="time"
+                name="category"
                 className="list-group-item"
-                value={props.category}
+                value={experience.category}
+                onChange={event => handleChange(event)}
               />
 
               <input
                 type="text"
                 name="location"
                 className="list-group-item"
-                value={props.location}
+                value={experience.location}
+                onChange={event => handleChange(event)}
               />
 
               <input
                 type="text"
-                name="time"
+                name="date_time"
                 className="list-group-item"
-                value={props.date_time}
+                value={experience.date_time}
+                onChange={event => handleChange(event)}
               />
 
               <input
                 type="text"
-                name="time"
+                name="cost"
                 className="list-group-item"
-                value={props.cost}
+                value={experience.cost}
+                onChange={event => handleChange(event)}
               />
             </ul>
 
@@ -56,7 +72,7 @@ export default function AllExperiencesCard(props) {
             <button
               className="btn btn-outline-success mt-2"
               type="button"
-              onClick={() => props.handleEdit(props.id)}
+              onClick={() => props.handleEdit(props.id, experience)}
             >
               Update
             </button>
@@ -71,4 +87,4 @@ export default function AllExperiencesCard(props) {
           </div>
        </div>
     )
-}
+  }

@@ -17,7 +17,7 @@ function AddExperience ({ errors, touched, isSubmitting }) {
       <div>
         {touched.location && errors.location && <p>{errors.location}</p>}
         <p>Where is this taking place?</p>
-        <Field type="text" name="location" />
+        <Field type="text" name="location" placeholder="Location"/>
       </div>
       <div>
         {touched.date_time && errors.date_time && <p>{errors.date_time}</p>}
@@ -27,7 +27,7 @@ function AddExperience ({ errors, touched, isSubmitting }) {
       <div>
         {touched.cost && errors.cost && <p>{errors.cost}</p>}
         <p>Set the price: (max is 499) </p>
-        <Field type="number" name="cost" min="0" max="499" />
+        <Field type="number" name="cost" min="0" max="$2500" />
       </div>
       <div>
           <p>Pick a category your experience best falls into:</p>
