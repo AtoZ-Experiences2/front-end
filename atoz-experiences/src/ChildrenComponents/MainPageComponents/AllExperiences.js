@@ -69,7 +69,7 @@ export default function AllExperiences() {
 
 
   return (
-    <div className="container row mb-5">
+    <div className="container row mb-3 mx-3">
       {experiences.map((activity, index) => (
         <AllExperiencesCard 
           id={activity.id}

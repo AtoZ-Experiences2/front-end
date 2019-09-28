@@ -19,7 +19,19 @@ body {
 }
 
 .app {
+    width: 100%;
+    margin: 0 auto;
     text-align: center;
+}
+
+.container-row {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.ui.secondary.menu {
+    width: 95%;
+    margin: 0 auto;
 }
 
 form {
@@ -37,6 +49,7 @@ p {
     font-size: 1.2rem;
     margin-top: 30px;
 }
+
 .error {
     margin: 0;
     position: absolute;

@@ -10,8 +10,8 @@ export default function NavBar () {
 
   
     return (
-      <div>
-        <h2>A to Z Experiences</h2>
+      <div className="container">
+        <h2 className="text-center">A to Z Experiences</h2>
         <Menu secondary>
           <NavLink to='/'>
             <Menu.Item
@@ -19,13 +19,13 @@ export default function NavBar () {
             active={activeItem === 'Home'}
             onClick={handleItemClick}
           />
-          </NavLink>
+          {/* </NavLink>
           <NavLink to='/allexperiences'>
             <Menu.Item
               name='All Experiences'
               active={activeItem === 'All Experiences'}
               onClick={handleItemClick}
-            /> 
+            />  */}
           </NavLink>
             <NavLink to='/addexperience'>
               <Menu.Item
@@ -34,7 +34,7 @@ export default function NavBar () {
                 onClick={handleItemClick}
               />         
           </NavLink>
-          <Menu.Menu position='right'>
+          <Menu.Menu position='center'>
             <Menu.Item>
               <Input icon='search' placeholder='Search...' />
             </Menu.Item>

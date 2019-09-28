@@ -23,8 +23,7 @@ export default function AllExperiencesCard(props) {
       console.log('experience', experience)
 
     return (
-      <div className="card mt-3 mx-3 bg-light">
-
+      <div className="card mt-3 mx-4 bg-light">
           <div className="card-body">
             <input
               type="text"
