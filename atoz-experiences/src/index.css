@@ -22,7 +22,7 @@ code {
 h2 {
   font-size: 4.8rem;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 a.item {
