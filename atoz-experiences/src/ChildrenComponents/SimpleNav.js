@@ -21,7 +21,7 @@ export default function SimpleNav () {
           />
           </NavLink>
           <Menu.Item
-            name='Activities'
+            name='Experiences'
             active={activeItem === 'messages'}
             onClick={handleItemClick}
           />

@@ -25,6 +25,7 @@ export default function AllExperiencesCard(props) {
     return (
       <div className="card mt-3 mx-4 bg-light">
           <div className="card-body">
+            <p className="mb-1">Experience:</p>
             <input
               type="text"
               className="card-title"
@@ -34,6 +35,7 @@ export default function AllExperiencesCard(props) {
             />
 
             <ul className="list-group">
+            <p className="mb-1">Category:</p>
               <input
                 type="text"
                 name="category"
@@ -41,7 +43,7 @@ export default function AllExperiencesCard(props) {
                 value={experience.category}
                 onChange={event => handleChange(event)}
               />
-
+            <p className="mb-1">Location:</p>
               <input
                 type="text"
                 name="location"
@@ -49,7 +51,7 @@ export default function AllExperiencesCard(props) {
                 value={experience.location}
                 onChange={event => handleChange(event)}
               />
-
+            <p className="mb-1">Date/Time:</p>
               <input
                 type="text"
                 name="date_time"
@@ -57,7 +59,7 @@ export default function AllExperiencesCard(props) {
                 value={experience.date_time}
                 onChange={event => handleChange(event)}
               />
-
+            <p className="mb-1">Cost:</p>
               <input
                 type="text"
                 name="cost"
