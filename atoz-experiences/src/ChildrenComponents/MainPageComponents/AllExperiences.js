@@ -51,8 +51,13 @@ export default function AllExperiences() {
   // Every time the component renders that function runs, and every time that function runs it updates state, and every time state updates the component renders 
 
   // const filterByPrice = () => {
-//   setPrices(prices => prices.filter(price => price == someCriteria))
-// }
+
+  //   const filteredPrices = experiences.filter(experience => experience.cost < 15);
+  //   console.log('experiences', experiences);
+  //   console.log('filteredPrices', filteredPrices);
+  //   setExperiences(filteredPrices);
+
+  // }
 
   // const filterByExperiences = () => {
   //   setExperiences(experiences => experiences.filter(experience => experience.category === "Outdoors"))
