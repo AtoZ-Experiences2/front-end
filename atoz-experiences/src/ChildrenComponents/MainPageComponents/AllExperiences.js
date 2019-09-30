@@ -6,9 +6,9 @@ import AllExperiencesCard from './AllExperiencesCard'
 //map the data/activities and create individual cards for each.
 export default function AllExperiences() {
   const [experiences, setExperiences] = useState([]);
-  const [prices, setPrices] = useState ([])
-  const [cities, setCities] = useState ([])
-  const [dates, setDates] = useState ([])
+  // const [prices, setPrices] = useState ([])
+  // const [cities, setCities] = useState ([])
+  // const [dates, setDates] = useState ([])
   const [loading, setLoading] = useState(false)
 
   useEffect(() => {
@@ -50,69 +50,40 @@ export default function AllExperiences() {
   // filterByPrice isn't a function declaration it's an invocation of a function that sets state and saves the return value(probably undefined ?) to the variable filterByPRice
   // Every time the component renders that function runs, and every time that function runs it updates state, and every time state updates the component renders 
 
-  // const filterByPrice = setPrices(prices.filter(cost => cost < 50))
-  // return (
-  //   <div>
-  //     {
-  //       prices.map(price => <p key={price}>{price}</p>)
-  //     }
-  //     <button onClick={filterByPrice}>Filter</button>
-  //   </div>
-  // )
+  // const filterByPrice = () => {
+//   setPrices(prices => prices.filter(price => price == someCriteria))
+// }
 
-//   const filterByPrice = setExperiences=prices.filter((cost) => {
-//     return cost.experience < 50;
-// })
-//   filterByPrice
+  // const filterByExperiences = () => {
+  //   setExperiences(experiences => experiences.filter(experience => experience.category === "Outdoors"))
+  // }
 
-  // const filterByExperiences = setExperiences(experiences.filter(experience => experience === "Outdoors"))
-  // return (
-  //   <div>
-  //     {
-  //       experiences.map(experience => <p key={experience}>{experience}</p>)
-  //     }
-  //     <button onClick={filterByExperiences}>Filter</button>
-  //   </div>
-  // )
+  // const filterByPrice = () => {
+  //   setExperiences(experiences.filter((experience) => {
+  //     return experience.cost < 50
+  //   }))
+  // }
 
-  // const filterExperiences = setExperiences.filter((experience) => {
-  //   return experience.activity === "Outdoors";
+  // const filterExperiences = experiences.filter((experience) => {
+  //   return experience.category === "Outdoors";
   // })
-  // filterExperiences
 
-  // const filterByLocation = setCities(cities.filter(city => city === "Newport Beach"))
-  // return (
-  //   <div>
-  //     {
-  //       cities.map(city => <p key={city}>{city}</p>)
-  //     }
-  //     <button onClick={filterByLocation}>Filter</button>
-  //   </div>
-  // )
-
-  // const filterByLocation = cities.filter((city) => {
-  //   return city.location === "Newport Beach";
-  // })
-  // filterByLocation
-
-  // const filterByDate = setDates(dates.filter(date => date === "1pm"))
-  // return (
-  //   <div>
-  //     {
-  //       dates.map(date => <p key={date}>{date}</p>)
-  //     }
-  //     <button onClick={filterByDate}>Filter</button>
-  //   </div>
-  // )
-
+  //   const filterByLocation = () => {
+  //     setCities(cities => cities.filter(city => city === "NewPort Beach"))
+  //   }
+   
+ 
   // const filterByDate = dates.filter((date) => {
   //   return date.date_time === "1pm";
   // })
-  // filterByDate
 
 
   return (
     <div className="container row mb-3 mx-3">
+      {/* <button onClick={() => filterByExperiences()}>Filter by Experience</button> */}
+      {/* <button onClick={filterByLocation}>Filter by Location</button>
+      <button onClick={filterByDates}>Filter by Date</button> */}
+      {/* <button onClick={() => filterByPrice()}>Filter by Price</button> */}
       {experiences.map((activity) => (
         <AllExperiencesCard 
           id={activity.id}
