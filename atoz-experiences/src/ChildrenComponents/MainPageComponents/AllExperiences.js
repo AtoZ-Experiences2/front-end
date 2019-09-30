@@ -6,9 +6,9 @@ import AllExperiencesCard from './AllExperiencesCard'
 //map the data/activities and create individual cards for each.
 export default function AllExperiences() {
   const [experiences, setExperiences] = useState([]);
-  // const [prices, setPrices] = useState ([])
-  // const [cities, setCities] = useState ([])
-  // const [dates, setDates] = useState ([])
+  const [prices, setPrices] = useState ([])
+  const [cities, setCities] = useState ([])
+  const [dates, setDates] = useState ([])
   const [loading, setLoading] = useState(false)
 
   useEffect(() => {
@@ -48,15 +48,15 @@ export default function AllExperiences() {
 
 // edit/update === put for axios call 'CRUD'
 
-  // const filterByPrice = setPrices(prices.filter(cost => cost < 50))
-  // return (
-  //   <div>
-  //     {
-  //       prices.map(price => <p key={price}>{price}</p>)
-  //     }
-  //     <button onClick={filterByPrice}>Filter</button>
-  //   </div>
-  // )
+  const filterByPrice = setPrices(prices.filter(cost => cost < 50))
+  return (
+    <div>
+      {
+        prices.map(price => <p key={price}>{price}</p>)
+      }
+      <button onClick={filterByPrice}>Filter</button>
+    </div>
+  )
 
 //   const filterByPrice = setExperiences=prices.filter((cost) => {
 //     return cost.experience < 50;
