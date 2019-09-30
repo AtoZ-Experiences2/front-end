@@ -51,9 +51,9 @@ export default withFormik({
 
   validationSchema: Yup.object().shape({
     name: Yup.string()
-      .required("We do need your name, even if it looks funny"),
+      .required("your name"),
     email: Yup.string()
-      .email("Please enter a valid email address!")
+      .email("email address!")
       .required("Please enter a valid email address!"),
     password: Yup.string().required("Please enter a valid password!"),
     username: Yup.string()
