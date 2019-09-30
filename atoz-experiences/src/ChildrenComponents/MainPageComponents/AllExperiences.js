@@ -47,16 +47,18 @@ export default function AllExperiences() {
   }
 
 // edit/update === put for axios call 'CRUD'
+  // filterByPrice isn't a function declaration it's an invocation of a function that sets state and saves the return value(probably undefined ?) to the variable filterByPRice
+  // Every time the component renders that function runs, and every time that function runs it updates state, and every time state updates the component renders 
 
-  const filterByPrice = setPrices(prices.filter(cost => cost < 50))
-  return (
-    <div>
-      {
-        prices.map(price => <p key={price}>{price}</p>)
-      }
-      <button onClick={filterByPrice}>Filter</button>
-    </div>
-  )
+  // const filterByPrice = setPrices(prices.filter(cost => cost < 50))
+  // return (
+  //   <div>
+  //     {
+  //       prices.map(price => <p key={price}>{price}</p>)
+  //     }
+  //     <button onClick={filterByPrice}>Filter</button>
+  //   </div>
+  // )
 
 //   const filterByPrice = setExperiences=prices.filter((cost) => {
 //     return cost.experience < 50;
