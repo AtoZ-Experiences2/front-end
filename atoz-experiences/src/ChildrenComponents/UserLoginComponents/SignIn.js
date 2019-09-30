@@ -15,7 +15,7 @@ const SignInPage = ({ errors, touched, status }) => {
     if (status) {
       setSignIn([...signIn, status])
     }
-  }, [status])
+  }, [])
 
   return (
     <div className='sign-up-form'>
