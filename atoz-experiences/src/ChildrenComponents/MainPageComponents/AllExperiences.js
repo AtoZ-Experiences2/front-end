@@ -50,13 +50,27 @@ export default function AllExperiences() {
   // filterByPrice isn't a function declaration it's an invocation of a function that sets state and saves the return value(probably undefined ?) to the variable filterByPRice
   // Every time the component renders that function runs, and every time that function runs it updates state, and every time state updates the component renders 
 
-  // const filterByPrice = () => {
-//   setPrices(prices => prices.filter(price => price == someCriteria))
-// }
+
 
   // const filterByExperiences = () => {
   //   setExperiences(experiences => experiences.filter(experience => experience.category === "Outdoors"))
   // }
+
+
+  // const filterExperiences = experiences.filter((experience) => {
+  //   return experience.category === "Outdoors";
+  // })
+
+
+  //   const filterByLocation = () => {
+  //     setCities(cities => cities.filter(city => city === "NewPort Beach"))
+  //   }
+
+
+  // const filterByDate = dates.filter((date) => {
+  //   return date.date_time === "1pm";
+  // })
+
 
   // const filterByPrice = () => {
   //   setExperiences(experiences.filter((experience) => {
@@ -64,18 +78,14 @@ export default function AllExperiences() {
   //   }))
   // }
 
-  // const filterExperiences = experiences.filter((experience) => {
-  //   return experience.category === "Outdoors";
-  // })
+   // const filterByPrice = () => {
 
-  //   const filterByLocation = () => {
-  //     setCities(cities => cities.filter(city => city === "NewPort Beach"))
-  //   }
-   
- 
-  // const filterByDate = dates.filter((date) => {
-  //   return date.date_time === "1pm";
-  // })
+  //   const filteredPrices = experiences.filter(experience => experience.cost < 15);
+  //   console.log('experiences', experiences);
+  //   console.log('filteredPrices', filteredPrices);
+  //   setExperiences(filteredPrices);
+
+  // }
 
 
   return (
@@ -94,10 +104,10 @@ export default function AllExperiences() {
           cost={activity.cost}
           handleDelete={handleDelete}
           handleEdit={handleEdit}
-          filterByPrice={activity.cost}
-          filterExperiences={activity.category}
-          filterByLocation={activity.location}
-          filterByDate={activity.date_time}
+          // filterByPrice={activity.cost}
+          // filterExperiences={activity.category}
+          // filterByLocation={activity.location}
+          // filterByDate={activity.date_time}
         />
       ))}
     </div>
